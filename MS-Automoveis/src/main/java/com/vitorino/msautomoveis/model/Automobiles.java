@@ -3,6 +3,8 @@ package com.vitorino.msautomoveis.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -26,14 +28,17 @@ public class Automobiles {
 
     @Getter
     @Setter
+    @NotBlank(message = "marca é obrigatório")
     private String marca;
 
     @Getter
     @Setter
+    @NotBlank(message = "modelo é obrigatório")
     private String modelo;
 
     @Getter
     @Setter
+    @NotNull(message = "valor é obrigatório")
     private Double valor;
 
     @Getter
