@@ -40,8 +40,6 @@ public class JwtUsernamePasswordAuthenticationFilter extends AbstractAuthenticat
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse rsp)
             throws IOException {
-        
-        System.out.println(req.getInputStream());
         User user = mapper.readValue(req.getInputStream(), User.class);
 
         return getAuthenticationManager().authenticate(new UsernamePasswordAuthenticationToken(
